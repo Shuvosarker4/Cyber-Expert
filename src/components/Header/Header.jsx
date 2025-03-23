@@ -1,9 +1,14 @@
+import { useState } from "react";
 import Cards from "../Cards/Cards";
 import Course from "../Course/Course";
 
 const Header = () => {
+  const [cost, setCost] = useState(0);
+  const [cart, setCart] = useState([]);
   const selectHandler = (card) => {
-    console.log(card);
+    let salary = cost + card.salary;
+    setCost(salary);
+    setCart([...cart, card]);
   };
   return (
     <div>
@@ -21,7 +26,7 @@ const Header = () => {
       </div>
       <div className="flex  flex-col lg:flex-row">
         <Cards selectHandler={selectHandler} />
-        <Course />
+        <Course cost={cost} cart={cart} />
       </div>
     </div>
   );

@@ -11,10 +11,20 @@ const Card = ({ card, selectHandler }) => {
       />
 
       <h2 className="text-xl font-bold mt-2">{name}</h2>
-      <p className="text-gray-600">Age: {age}</p>
-      <p className="text-gray-600">Destination:{designation}</p>
-      <p className="text-gray-600">Address: {address}</p>
-      <p className="text-gray-700 font-semibold">Salary: ${salary}/year</p>
+      <p className="text-gray-600 font-semibold">
+        <b>Age :</b> {age}
+      </p>
+      <p className="text-gray-600 font-semibold">
+        <b>Destination:</b>
+        {designation}
+      </p>
+      <p className="text-gray-600 font-semibold">
+        <b>Address:</b> {address}
+      </p>
+      <p className="text-gray-700 font-semibold">
+        <b>Salary: $</b>
+        {salary}/year
+      </p>
 
       <button
         onClick={() => selectHandler(card)}
